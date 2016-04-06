@@ -22,10 +22,10 @@ Add a new action to sale orders, that set delivered quantities to ordered quanti
     
     'category': 'Sales Management',
     
-    'depends' : ['sale', ],
+    'depends' : ['sale', 'stock'],
     
     'data': [
-        
+        'views/sale_view.xml',
     ],
     
     'installable': True,
