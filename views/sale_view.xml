@@ -8,6 +8,9 @@
                     <button name="action_force_execution" string="Force Execution"
                         type="object" class="btn-danger"
                         attrs="{'invisible': ['|', ('invoice_status', '=', 'invoiced'), ('state', 'in', ['draft', 'sent'])]}"/>
+		    <button name="action_force_no_invoice" string="Da non fatturare"
+                        type="object" class="btn-danger"
+                        attrs="{'invisible': ['|', ('invoice_status', 'in', ['invoiced', 'no']), ('state', 'in', ['draft', 'sent'])]}"/>
                 </header>
      		</field>
     </record>

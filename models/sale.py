@@ -14,3 +14,10 @@ class SaleForcedExection(models.Model):
         for order in self:
             for line in order.order_line:
                 line.qty_delivered = line.product_uom_qty
+
+    @api.multi
+    def action_force_no_invoice(self):
+        for order in self:
+            for line in order.order_line:
+                if line.invoice_status in ('to invoice', ):
+                    line.invoice_status = "no"
